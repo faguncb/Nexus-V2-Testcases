@@ -2,33 +2,33 @@
 
 URL under test: `https://nexus-sdk-v2.vercel.app/bridge`
 
-| Step | Area | What to Validate | Action | Expected Result | Pass/Fail |
-|---|---|---|---|---|---|
-| 1 | Page Load | Bridge URL loads | Open `https://nexus-sdk-v2.vercel.app/bridge` in a clean tab | Page renders without blank screen/error; title shows `Nexus SDK v2` | ☐ |
-| 2 | Page Load | Initial performance sanity | Hard refresh once (`Cmd+Shift+R`) | No crash, no visible broken layout, no stuck loading state | ☐ |
-| 3 | Header/UI | Branding block | Verify `Nexus` + `v2` logo/heading visible | Logo/text are visible, aligned, not clipped | ☐ |
-| 4 | Header/UI | Primary CTA visibility | Confirm top buttons are visible: `Switch to testnet`, `View balances`, theme toggle, `Connect Wallet` | All buttons are visible, enabled, and styled consistently | ☐ |
-| 5 | Navigation Tabs | Nav tab visibility | Confirm links visible: `Exact Out Swap`, `Swap & Execute`, `Bridge`, `Bridge & Execute` | All four tabs present; current route tab is highlighted | ☐ |
-| 6 | Hero Content | Static copy | Verify `Connect your wallet` and support lines are visible | Text renders clearly with no overlap/truncation | ☐ |
-| 7 | Button Check | `Switch to testnet` modal opens | Click `Switch to testnet` | Network confirmation dialog appears with actionable controls | ☐ |
-| 8 | Button Check | Network modal cancel path | In dialog, click `Cancel` | Dialog closes; route remains unchanged | ☐ |
-| 9 | Button Check | Network switch confirm path | Re-open dialog, click `Switch to testnet` | Network changes to testnet state; no crash; UI updates accordingly | ☐ |
-| 10 | Button Check | `View balances` opens balances modal | Click `View balances` | Balances modal opens; shows empty/wallet prompt when disconnected | ☐ |
-| 11 | Button Check | Balances modal actions | Click `Refresh balances` (if visible) then `Close` | Refresh does not error; modal closes correctly | ☐ |
-| 12 | Button Check | Theme toggle behavior | Click theme button (`Switch to dark mode` / `Switch to light mode`) | Theme flips; button label updates to opposite mode | ☐ |
-| 13 | Button Check | Theme persistence | Reload page after changing theme | Theme remains consistent or resets per intended behavior (document expected) | ☐ |
-| 14 | Button Check | `Connect Wallet` opens wallet chooser | Click `Connect Wallet` | Wallet modal opens with wallet options | ☐ |
-| 15 | Wallet Modal UI | Wallet options render | Verify buttons such as `MetaMask`, `Coinbase Wallet`, `Continue with Family`, `I don’t have a wallet`, `More Information`, `Close` | All wallet options visible/clickable; no malformed text | ☐ |
-| 16 | Wallet Modal Navigation | `More Information` link | Click `More Information` | Correct info page opens (new tab or same tab) without 404 | ☐ |
-| 17 | Wallet Modal Link Safety | “No wallet” user flow | Click `I don’t have a wallet` | Correct onboarding/help destination opens; no broken redirect | ☐ |
-| 18 | Wallet Modal Action | Close interaction | Click `Close` or outside modal | Modal closes fully and focus returns to page | ☐ |
-| 19 | Nav Route Check | `Exact Out Swap` | Click `Exact Out Swap` tab | URL changes to `/swap-exact-out`; tab becomes active | ☐ |
-| 20 | Nav Route Check | `Swap & Execute` | Click `Swap & Execute` tab | URL changes to `/swap-and-execute`; tab becomes active | ☐ |
-| 21 | Nav Route Check | `Bridge` | Click `Bridge` tab | URL changes to `/bridge`; tab becomes active | ☐ |
-| 22 | Nav Route Check | `Bridge & Execute` | Click `Bridge & Execute` tab | URL changes to `/bridge-and-execute`; tab becomes active | ☐ |
-| 23 | Broken Link Sweep | Internal route validity | Open each route directly in address bar: `/bridge`, `/swap-exact-out`, `/swap-and-execute`, `/bridge-and-execute` | Each route loads app UI; no 404/error page | ☐ |
-| 24 | Broken Link Sweep | External links from wallet/help flows | Click every external/help link once | Target pages load successfully (HTTP 200-ish, no dead pages) | ☐ |
-| 25 | UI Completeness | Cross-page element consistency | On each nav tab, verify top controls + hero section visibility | No missing components or visual breakage between tabs | ☐ |
-| 26 | Regression Sanity | Console/network errors | Open devtools and interact with all buttons/tabs once | No critical JS errors or failed network calls affecting UX | ☐ |
+| Step | Area | What to Validate | Action | Expected Result | Pass/Fail | Notes |
+|---|---|---|---|---|---|---|
+| 1 | Page Load | Bridge URL loads | Open `https://nexus-sdk-v2.vercel.app/bridge` in a clean tab | Page renders without blank screen/error; title shows `Nexus SDK v2` | ☐ | |
+| 2 | Page Load | Initial performance sanity | Hard refresh once (`Cmd+Shift+R`) | No crash, no visible broken layout, no stuck loading state | ☐ | |
+| 3 | Header/UI | Branding block | Verify `Nexus` + `v2` logo/heading visible | Logo/text are visible, aligned, not clipped | ☐ | |
+| 4 | Header/UI | Primary CTA visibility | Confirm top buttons are visible: `Switch to testnet`, `View balances`, theme toggle, `Connect Wallet` | All buttons are visible, enabled, and styled consistently | ☐ | |
+| 5 | Navigation Tabs | Nav tab visibility | Confirm links visible: `Exact Out Swap`, `Swap & Execute`, `Bridge`, `Bridge & Execute` | All four tabs present; current route tab is highlighted | ☐ | |
+| 6 | Hero Content | Static copy | Verify `Connect your wallet` and support lines are visible | Text renders clearly with no overlap/truncation | ☐ | |
+| 7 | Button Check | `Switch to testnet` modal opens | Click `Switch to testnet` | Network confirmation dialog appears with actionable controls | ☐ | |
+| 8 | Button Check | Network modal cancel path | In dialog, click `Cancel` | Dialog closes; route remains unchanged | ☐ | |
+| 9 | Button Check | Network switch confirm path | Re-open dialog, click `Switch to testnet` | Network changes to testnet state; no crash; UI updates accordingly | ☐ | |
+| 10 | Button Check | `View balances` opens balances modal | Click `View balances` | Balances modal opens; shows empty/wallet prompt when disconnected | ☐ | |
+| 11 | Button Check | Balances modal actions | Click `Refresh balances` (if visible) then `Close` | Refresh does not error; modal closes correctly | ☐ | |
+| 12 | Button Check | Theme toggle behavior | Click theme button (`Switch to dark mode` / `Switch to light mode`) | Theme flips; button label updates to opposite mode | ☐ | |
+| 13 | Button Check | Theme persistence | Reload page after changing theme | Theme remains consistent or resets per intended behavior (document expected) | ☐ | |
+| 14 | Button Check | `Connect Wallet` opens wallet chooser | Click `Connect Wallet` | Wallet modal opens with wallet options | ☐ | |
+| 15 | Wallet Modal UI | Wallet options render | Verify buttons such as `MetaMask`, `Coinbase Wallet`, `Continue with Family`, `I don’t have a wallet`, `More Information`, `Close` | All wallet options visible/clickable; no malformed text | ☐ | |
+| 16 | Wallet Modal Navigation | `More Information` link | Click `More Information` | Correct info page opens (new tab or same tab) without 404 | ☐ | |
+| 17 | Wallet Modal Link Safety | “No wallet” user flow | Click `I don’t have a wallet` | Correct onboarding/help destination opens; no broken redirect | ☐ | |
+| 18 | Wallet Modal Action | Close interaction | Click `Close` or outside modal | Modal closes fully and focus returns to page | ☐ | |
+| 19 | Nav Route Check | `Exact Out Swap` | Click `Exact Out Swap` tab | URL changes to `/swap-exact-out`; tab becomes active | ☐ | |
+| 20 | Nav Route Check | `Swap & Execute` | Click `Swap & Execute` tab | URL changes to `/swap-and-execute`; tab becomes active | ☐ | |
+| 21 | Nav Route Check | `Bridge` | Click `Bridge` tab | URL changes to `/bridge`; tab becomes active | ☐ | |
+| 22 | Nav Route Check | `Bridge & Execute` | Click `Bridge & Execute` tab | URL changes to `/bridge-and-execute`; tab becomes active | ☐ | |
+| 23 | Broken Link Sweep | Internal route validity | Open each route directly in address bar: `/bridge`, `/swap-exact-out`, `/swap-and-execute`, `/bridge-and-execute` | Each route loads app UI; no 404/error page | ☐ | |
+| 24 | Broken Link Sweep | External links from wallet/help flows | Click every external/help link once | Target pages load successfully (HTTP 200-ish, no dead pages) | ☐ | |
+| 25 | UI Completeness | Cross-page element consistency | On each nav tab, verify top controls + hero section visibility | No missing components or visual breakage between tabs | ☐ | |
+| 26 | Regression Sanity | Console/network errors | Open devtools and interact with all buttons/tabs once | No critical JS errors or failed network calls affecting UX | ☐ | |
 
 Reference: [Nexus SDK v2 Bridge](https://nexus-sdk-v2.vercel.app/bridge)
